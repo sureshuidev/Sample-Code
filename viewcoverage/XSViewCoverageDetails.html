@@ -1,0 +1,19 @@
+<div class="_view-coverage">
+  <div class="{{grid}} coverages-alignment">
+    <div class="col-xs-1 sm-coverage-cell">
+      <div class="coverage-text _font-bodylightest">{{viewCoverage.technicalSupportHeader}}</div>
+      <span class="coverage-status _font-body">{{viewCoverage.technicalSupportDesc}}</span>
+      <div class="coverage-text _font-bodylightest">{{viewCoverage.supportCoverageHeader}}</div>
+      <span class="coverage-status _font-body">{{viewCoverage.supportEligible}}</span>
+      <div class="coverage-legal _font-sosumi-text" aw-resource="el.exp1.myprod.coveragelegal.body"></div>
+      <div class="coverage-text" ng-if="viewCoverage">
+        <aw-link class="_font-bodylink" exec="goToSelfSolve(viewCoverage.fullCoverageURL)">
+          <span aw-resource="el.exp1.myprod.fullcoverage.link"></span>
+        </aw-link>
+      </div>
+    </div>
+    <div class="col-xs-1">
+      <div class="coverage-legal-text" aw-html="viewCoverage['consumerLawMessage']"></div>
+    </div>
+  </div>
+</div>

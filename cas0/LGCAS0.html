@@ -1,0 +1,39 @@
+<div class="_page-cas0 main-body" aw-track ng-controller="CASController as CASController">
+  <div ng-if="(($root.page == 'cas0') && ($root._CASService.context.page != 'SASO'))">
+    <aw-hero-unit hero1="el.exp0.cookie.welcome.header" hero2="el.exp0.cookie.welcome.body" entryeffect="fadeIn" img="cas.shared.twin"></aw-hero-unit>
+  </div>
+  <div ng-if="(($root._CASService.context.page == 'SASO') && ($root.page != 'cas0'))">
+    <aw-hero-unit hero1="el.saso.welcome.header" hero2="el.saso.welcome.body" entryeffect="fadeIn" img="cas.shared.twin"></aw-hero-unit>
+  </div>
+  <div ng-controller="CAS0Controller as CAS0Controller" aw-busy="'cas0'" class="option-button-container lg-margin row" ng-class="{'selected':selectedFirstLevel}"
+  aw-animate="fadeInRight">
+    <div class="container">
+      <ul class="row regions-list rowL">
+        <li ng-repeat="level1 in _regions.regions" aw-animate="custom:component.animate.AnimateService:animateAdjustHeights" aw-animate-selector=".button-content-desc">
+          <aw-button awtab="{{($index + 1) * 100}}" layout="'fullImage'" item="level1" aw-busy="level1.regionCode" itemclick="selectFirstLevel('Region', item, $index)"
+          itemimage="cas.shared.region.{{level1.regionCode}}" itemdesc="{{level1.regionName}}" itemstyle="col-lg-L10-2 row-lg-4 row-md-0 row-sm-0 row-xs-0">
+          </aw-button>
+        </li>
+      </ul>
+    </div>
+    <div class="country-image-preload-hidden" aw-img="cas.shared.countryFlag"></div>
+    <aw-deck ng-if="selectedFirstLevel" aw-animate="custom:component.deck.DeckDirective:animateDeck" closefunc="closeThisLevel()" aria-label="{{selectedFirstLevel.regionName}}">
+      <aw-deck-header>
+        <span aw-html="selectedFirstLevel.regionName"></span>
+      </aw-deck-header>
+      <aw-deck-body>
+        <div class="col-xs-1 row-lg-4 row-md-0 row-sm-0 row-xs-0"></div>
+        <div class="cas0-locale-language-buttons" ng-if="selectedFirstLevel.countries.length > 0">
+          <aw-button awtab="{{(selecteditem.index + 1) * 101}}" aw-busy="level2.locale" ng-repeat="level2 in selectedFirstLevel.countries" layout="'wideTextAux'"
+          item="level2" itemclick="selectSecondLevel('Country', item, event)" itemimage="{{_CAS0Service.countryImg(level2.countryFlagPosition)}}"
+          itemimagecss="{{_CAS0Service.countryImgClip(level2.countryFlagPosition)}}" itemdesc="{{level2.desc}}" lang="level2.locale.substring(0,2)"
+          class="cas0-locale-language-button">
+          </aw-button>
+        </div>
+        <div class="_font-body-semibold-center country-not-listed-header" aw-resource="el.exp0.countrynotlisted.header"></div>
+        <div class="_font-bodycenter country-not-listed-body" aw-resource="el.exp0.countrynotlisted.body"></div>
+      </aw-deck-body>
+    </aw-deck>
+  </div>
+</div>
+</div>

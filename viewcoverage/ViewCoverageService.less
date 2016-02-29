@@ -1,0 +1,128 @@
+.CM {
+    ._view-coverage {
+        .lg-coverage-banner {
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+        .lg-coverage-cell {
+            padding-left: 25px !important;
+        }
+        .sm-coverage-cell {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .tri-up {
+            position: relative;
+            background: @white-lightest;
+            border-top: 1px solid @gray-small;
+        }
+        .tri-up:after, .tri-up:before {
+            bottom: 100%;
+            left: 10%;
+            border: 0 none @transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+        .tri-up:after {
+            border-color: @white-lightest;
+            border-bottom-color: @white-lightest;
+            border-width: 20px;
+            margin-left: -20px;
+        }
+        .tri-up:before {
+            border-color: @light-gray;
+            border-bottom-color: @gray-small;
+            border-width: 21px;
+            margin-left: -21px;
+        }
+        .view-coverage-footer {
+            .coverage-text {
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 16px;
+                padding-left: 8px;
+            }
+            div {
+                padding-top: 6px;
+            }
+            .coverage-icon {
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+
+.LG {
+    ._view-coverage {
+        .view-coverage-link, .hide-coverage-link {
+            font-weight: @font-weight-text;
+        }
+        .view-full-coverage-link-container {
+            margin-top: 10px;
+        }
+    }
+}
+
+.MD {}
+
+.SM {}
+
+.XS {
+    ._view-coverage {
+        .view-coverage-footer {
+            div {
+                padding: 0;
+                margin: 0;
+            }
+            .coverage-text {
+                margin: 0;
+                padding: 0;
+            }
+            .coverage-wrapper {
+                position: relative;
+                margin-top: 10px;
+                &:first-child {
+                    margin-top: 15px;
+                }
+                .coverage-text {
+                    margin: 0;
+                    padding: 0;
+                }
+                .coverage-icon {
+                    display: inline-block;
+                    & + .coverage-text {
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .coverage-legal {
+                margin-top: 10px;
+                br {
+                    margin-top: 15px;
+                }
+            }
+            .view-full-coverage-link {
+                margin-top: 10px;
+            }
+        }
+        .view-coverage-link, .hide-coverage-link {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: auto;
+            span {
+                float: left;
+            }
+        }
+        &.product-content-footer {
+            height: 24px;
+        }
+    }
+}

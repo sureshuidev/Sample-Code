@@ -1,0 +1,13 @@
+<div class="_view-coverage {{grid}}" ng-class="{'is-closed': !showCoverageSection, 'is-open': showCoverageSection}">
+  <aw-link ng-if="!showCoverageSection" exec="showCov()" class="_font-body-link-centered view-coverage-link">
+    <span aw-resource="el.shared.myprod.viewcoverage.link"></span>
+  </aw-link>
+  <aw-link ng-if="showCoverageSection" exec="hideCov()" class="_font-body-link-centered hide-coverage-link">
+    <span aw-resource="el.shared.myprod.hidecoverage.link"></span>
+  </aw-link>
+  <div class="coverage-text" ng-if="viewCoverage">
+    <aw-link class="_font-bodylink" exec="goToSelfSolve(fullCoverageUrl)">
+      <span aw-resource="el.exp1.myprod.fullcoverage.link"></span>
+    </aw-link>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="_view-coverage">
+  <div class="{{grid}} coverages-alignment">
+    <div class="coverage-wrapper" ng-if="viewCoverage.technicalSupportDesc && viewCoverage.technicalSupportDesc.length>0">
+      <span class="coverage-icon" aw-img="{{viewCoverage.technicalSupportIcon}}"></span>
+      <div class="coverage-text _font-bodylightest" aw-resource="{{viewCoverage.technicalSupportHeader}}"></div>
+      <span class="coverage-status _font-body" aw-resource="{{viewCoverage.technicalSupportDesc}}"></span>
+    </div>
+
+    <div class="coverage-wrapper" ng-if="viewCoverage.serviceCoverageDesc && viewCoverage.serviceCoverageDesc.length>0">
+      <span class="coverage-icon" aw-img="{{viewCoverage.supportCoverageIcon}}"></span>
+      <div class="coverage-text _font-bodylightest" aw-resource="{{viewCoverage.supportCoverageHeader}}"></div>
+      <span class="coverage-status _font-body" aw-resource="{{viewCoverage.serviceCoverageDesc}}"></span>
+    </div>
+
+    <div class="coverage-text view-full-coverage-link" ng-if="viewCoverage.technicalSupportDesc && viewCoverage.technicalSupportDesc.length>0">
+      <aw-link class="_font-bodylink view-full-coverage-link" exec="goToSelfSolve(viewCoverage.fullCoverageURL)">
+        <span aw-resource="el.exp1.myprod.fullcoverage.link"></span>
+        <span class="_icon _icon-more"></span>
+      </aw-link>
+    </div>
+
+    <div class="coverage-legal _font-sosumi-text" ng-if="viewCoverage.serviceCoverageDesc && viewCoverage.serviceCoverageDesc.length>0" aw-resource="{{viewCoverage.consumerLawMessage}}"></div>
+
+    <div class="_font-input-error error-message" ng-if="viewCoverage.errorDesc  && viewCoverage.errorDesc.length>0" aw-resource="{{viewCoverage.errorDesc}}"></div>
+  </div>
+</div>
